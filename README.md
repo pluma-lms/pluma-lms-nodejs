@@ -17,7 +17,7 @@ Pluma (Node.js) keeps several key points in mind. These are:
 # Download and installation
 You may download the latest stable release of Pluma LMS (Node.js) from above.
 
-Currently, installation requires the system administrator to simply enter "settings.php" and modify the variables to satisfy their environments. Then, create the database as specified. We will probably add a database creation script soon.
+Currently, installation requires the system administrator to do stuff with Node.js.
 
 After that, your installation is complete. Pluma LMS (Node.js) is committed to speed so we will add shell script BS (```npm``` and the whole nine yards).
 
