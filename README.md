@@ -10,13 +10,9 @@ Pluma (Node.js) keeps several key points in mind. These are:
 - A secure, easy-to-use, and logical API that serves as the backend of the software.
 
 # Requirements
-- PHP 5.6 and above are officially supported. You may try PHP 5.3-5.5 at your own risk.
+- Node.js
 - MySQL 5 and above. Once again, you may try older versions at your own risk.
 - Google Chrome for Pluma LMS endusers.
-
-## Android app requirements
-- Android 4.4 KitKat
-- An internet connection
 
 # Download and installation
 You may download the latest stable release of Pluma LMS from above.
