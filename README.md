@@ -11,15 +11,15 @@ Pluma (Node.js) keeps several key points in mind. These are:
 
 # Requirements
 - Node.js
-- MySQL 5 and above. Once again, you may try older versions at your own risk.
+- MySQL 5 and above. Once again, you may try older versions at your own risk. (This might change to PostgreSQL.)
 - Google Chrome for Pluma LMS endusers.
 
 # Download and installation
-You may download the latest stable release of Pluma LMS from above.
+You may download the latest stable release of Pluma LMS (Node.js) from above.
 
 Currently, installation requires the system administrator to simply enter "settings.php" and modify the variables to satisfy their environments. Then, create the database as specified. We will probably add a database creation script soon.
 
-After that, your installation is complete. Pluma is committed to minimal setup and absolutely no shell script BS (launchPluma.sh will never exist).
+After that, your installation is complete. Pluma LMS (Node.js) is committed to speed so we will add shell script BS (```npm``` and the whole nine yards).
 
 # Contributions
 Anybody is welcome to contribute to Pluma LMS's code. Please fork our repository, make changes, and create a pull request. When you have done so, our core team will review your contribution and ensure it is beneficial for Pluma and reflects our design principles.
