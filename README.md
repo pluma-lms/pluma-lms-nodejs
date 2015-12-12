@@ -11,7 +11,7 @@ Pluma (Node.js) keeps several key points in mind. These are:
 
 # Requirements
 - Node.js
-- MySQL 5 and above. Once again, you may try older versions at your own risk. (This might change to PostgreSQL.)
+- MongoDB
 - Google Chrome for Pluma LMS endusers.
 
 # Download and installation
