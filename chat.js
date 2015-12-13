@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-function main (socket) {
+function main (io,socket) {
      fs.readFile('./chat.html', 'utf8', function (err, data) {
                 if (err) {
                     console.log(err);
@@ -18,16 +18,16 @@ function main (socket) {
         switch (command) {
             case '/nick':
                 var newNick = params;
-                socket.emit('servermsg', nick + ' changed his name to ' + newNick);
+                io.emit('servermsg', nick + ' changed his name to ' + newNick);
                 nick = newNick;
                 break;
             case '/title':
-                socket.emit('title', params);
-                socket.emit('servermsg', nick + ' changed the title to ' + params);
+                io.emit('title', params);
+                io.emit('servermsg', nick + ' changed the title to ' + params);
                 break;
             default:
                 console.log(nick + ': ' + msg);
-                socket.emit('servermsg', nick + ': ' + msg);
+                io.emit('servermsg', nick + ': ' + msg);
         }
     });
     socket.on('disconnect', function () {
