@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Socket.IO chat</title>
+        <LINK REL="SHORTCUT ICON" HREF="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"/>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { font: 13px Helvetica, Arial; }
+            div{clear: both;}
+            .type { margin-bottom: 3px; overflow-y: scroll; position: fixed;}
+            form { background: #000; position: fixed; bottom: 0; width: 100%; }
+            form input {height: 100%; width: 100%;}
+            #messages { list-style-type: none; margin: 0; padding: 0; }
+            #messages li { padding: 5px 10px; }
+            #messages li:nth-child(odd) { background: #eee; }
+        </style>
+    </head>
+    <body>
+        <div id="messageArea" style="overflow:auto;height:95vh;">
+            <ul id="messages"></ul>
+        </div>
+        <div style="height: 5vh;">
+            <form action="">
+                <input id="m" autocomplete="off" />
+            </form>
+        </div>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            var inputForm = document.getElementById('m');
+            m.focus();
+            m.select();
+            var socket = io();
+            $('form').submit(function () {
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+            });
+            socket.on('servermsg', function (msg) {
+                $('#messages').append($('<li>').text(msg));
+                var messageArea = document.getElementById('messageArea');
+                messageArea.scrollTop = messageArea.scrollHeight;
+            });
+            socket.on('title', function (msg) {
+                document.title = msg;
+            });
+        </script>
+    </body>
+</html>
