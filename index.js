@@ -5,7 +5,9 @@ var chat = require('./chat.js');
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
-
+app.get('/javascript.js', function (req, res) {
+    res.sendFile(__dirname + '/javascript.js'); //sets initial HTML page
+});
 io.on('connection', function (socket) {
     socket.on('login', function (username) {
         if (username === 'user')
