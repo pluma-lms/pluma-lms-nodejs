@@ -6,12 +6,12 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
 
-io.on('connection', function (io,socket) {
+io.on('connection', function (socket) {
     socket.on('login', function (username) {
         if (username === 'user')
         {
             console.log("LOGIN");
-            chat.main(socket);
+            chat.main(io,socket);
         }
     });
 });
