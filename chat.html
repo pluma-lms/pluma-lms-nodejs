@@ -24,13 +24,13 @@
                 <input id="m" autocomplete="off" />
             </form>
         </div>
-        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
         <script>
             var inputForm = document.getElementById('m');
             m.focus();
             m.select();
-            var socket = io();
+            //var socket = io();
             $('form').submit(function () {
                 socket.emit('chat message', $('#m').val());
                 $('#m').val('');
