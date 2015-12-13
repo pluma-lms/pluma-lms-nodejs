@@ -1,0 +1,51 @@
+<html>
+    <head>
+         <meta charset="utf-8"/>
+    </head>
+    <body>
+        <?php
+                date_default_timezone_set('America/Chicago');
+                $time = getdate();
+
+        ?>
+        <h1><?php echo $time[weekday]  ." " .$time[month]  ." "  .$time[wday] .", "  .$time[year] ?></h1>
+        <table>
+            <tr>
+                <td>Sunday</td>
+                <td>Monday</td>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Monday</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Monday</td>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Monday</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Monday</td>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Monday</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Monday</td>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Monday</td>
+            </tr>
+        </table>
+    </body>
+</html>
