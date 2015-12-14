@@ -1,6 +1,6 @@
 {
   "name": "Pluma",
-  "version": "0.1.2",
+  "version": "0.4.1",
   "description": "Pluma LMS (Node.js)",
   "dependencies": {
     "express": "^4.10.2",

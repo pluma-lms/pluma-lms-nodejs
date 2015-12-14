@@ -45,14 +45,13 @@
                     document.getElementById('leftBar').innerHTML = html;
                 });
             }
-            setLeftTab(0);
         </script>
     </head>
     <body>
-        <div id="username" align="right">Bob <a onclick="logout()">Logout</a></div>
-        <img src="includes/assets/plumalms-logo.png" width="100px" alt="Pluma LMS"/>
-        <h1>Pluma</h1>
-        <div id="leftTab">
+        <!--<div id="username" style="float: right;">Bob <a onclick="logout()">Logout</a></div> -->
+        <!--<img src="includes/assets/plumalms-logo.png" width="100px" alt="Pluma LMS"/>-->
+        <!--<h1>Pluma</h1>-->
+        <div id="leftTab" style="position: relative; left: -8px; top: -9px;">
             <button type="button" class="butt selectedButt" onclick="setLeftTab(0)" id="0">Notifications</button>
             <button type="button" class="butt" onclick="setLeftTab(1)" id="1">Grades</button>
             <button type="button" class="butt" onclick="setLeftTab(2)" id="2">Vitals</button>
@@ -63,5 +62,8 @@
         </div>
         <div id="rightBar" style="float: right;">
         </div>
+        <script>
+            setLeftTab(0);
+        </script>
     </body>
 </html>
