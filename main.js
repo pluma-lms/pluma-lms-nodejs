@@ -1,4 +1,5 @@
 var fs = require('fs');
+var chat = require('./chat');
 
 function main (io,socket) {
      fs.readFile('./main.html', 'utf8', function (err, data) {
@@ -7,7 +8,7 @@ function main (io,socket) {
                 }
                 socket.emit('page', data);
             });
-    socket.on('requestPage',function(page)
+    socket.on('requestPage',function(page,callback)
     {
         fs.readFile('./includes/pages/'+page+'.html', 'utf8', function (err, data) {
                 if (err) {

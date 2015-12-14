@@ -2,17 +2,16 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="./css.css">          
+        <link rel="stylesheet" type="text/css" href="./main.css">          
         <title>Pluma</title>
-        <script src="./javascript.js"></script>
+        <script src="./main.js"></script>
         <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
         <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
         <script>
-            socket.emit('requestPage', 'calender', function (html) {
-                document.getElementById(rightBar).innerHTML = html;
+            socket.emit('requestPage', 'calendar', function (html) {
+                document.getElementById('rightBar').innerHTML = html;
             });
-            setLeftTab(0);
-            var pages = ['notification', 'grades', 'vitals', 'attendance'];
+            var pages = ['notifications', 'grades', 'vitals', 'attendance'];
             var pageIndex = 0;
             document.onkeydown = function (e)
             {
@@ -25,7 +24,7 @@
                         }
                         break;
                     case 37:
-                        pageIndex = pageIndex--;
+                        pageIndex--;
                         if (pageIndex < 0)
                         {
                             pageIndex = pages.length - 1;
@@ -37,21 +36,21 @@
             function setLeftTab(location)
             {
                 pageIndex = location;
-                iframe.src = pages[location];
                 for (i = 0; i < pages.length; i++)
                 {
                     document.getElementById(i).className = "butt";
                 }
                 document.getElementById(location).className = "butt selectedButt";
                 socket.emit('requestPage', pages[location], function (html) {
-                    document.getElementById(leftBar).innerHTML = html;
+                    document.getElementById('leftBar').innerHTML = html;
                 });
             }
+            setLeftTab(0);
         </script>
     </head>
     <body>
-        <div id="username" align="right">Bob<a onclick="logout()">Logout</a></div>
-        <img src="includes/assets/plumalms-logo.png" width="100px" alt="Pluma LMS" />
+        <div id="username" align="right">Bob <a onclick="logout()">Logout</a></div>
+        <img src="includes/assets/plumalms-logo.png" width="100px" alt="Pluma LMS"/>
         <h1>Pluma</h1>
         <div id="leftTab">
             <button type="button" class="butt selectedButt" onclick="setLeftTab(0)" id="0">Notifications</button>
@@ -59,10 +58,10 @@
             <button type="button" class="butt" onclick="setLeftTab(2)" id="2">Vitals</button>
             <button type="button" class="butt" onclick="setLeftTab(3)" id="3">Attendance</button>
         </div>
-        <div id="leftBar">  
+        <br/>
+        <div id="leftBar" style="float: left;clear: left;">  
         </div>
-        <div id="rightBar">
+        <div id="rightBar" style="float: right;">
         </div>
-        <br clear="all"/>
     </body>
 </html>

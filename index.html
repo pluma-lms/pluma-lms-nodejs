@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Pluma</title>
+        <link rel="stylesheet" type="text/css" href="./main.css">
     </head>
     <body>
         <p>Username:<input id="user" type="text" name="username"/></p>
@@ -9,7 +10,7 @@
         <button onclick="login()">Click Me!</button>
         <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
         <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-        <script src="./javascript.js"></script>
+        <script src="./main.js"></script>
         <script>
             var socket = io();
             function login()

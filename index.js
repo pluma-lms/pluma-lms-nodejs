@@ -5,13 +5,18 @@ var main = require('./main.js');
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
-app.get('/javascript.js', function (req, res) {
-    res.sendFile(__dirname + '/javascript.js'); 
+app.get('/main.js', function (req, res) {
+    res.sendFile(__dirname + '/includes/resources/main.js'); 
 });
 
-app.get('/css.css', function (req, res) {
-    res.sendFile(__dirname + '/css.css'); //sets initial HTML page
+app.get('/main.css', function (req, res) {
+    res.sendFile(__dirname + '/includes/resources/main.css'); //sets initial HTML page
 });
+
+app.get('/includes/assets/plumalms-logo.png', function (req, res) {
+    res.sendFile(__dirname + '/includes/assets/plumalms-logo.png'); //sets initial HTML page
+});
+
 io.on('connection', function (socket) {
     socket.on('login', function (username) {
         if (username === 'user')
