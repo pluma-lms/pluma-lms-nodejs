@@ -22,7 +22,15 @@ app.get('/includes/assets/bookman.ttf', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    socket.on('login', function (username) {
+    socket.on('login', function (userInfo) {
+        if (userInfo[0] === 'user')
+        {
+            console.log("LOGIN");
+            main.main(io, socket);
+        }
+    });
+    
+     socket.on('chat', function (username) {
         if (username === 'user')
         {
             console.log("LOGIN");
