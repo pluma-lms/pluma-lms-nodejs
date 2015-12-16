@@ -7,9 +7,6 @@ var chat = require('./chat.js');
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
-app.get('/main.js', function (req, res) {
-    res.sendFile(__dirname + '/includes/resources/main.js');
-});
 
 app.get('/main.css', function (req, res) {
     res.sendFile(__dirname + '/includes/resources/main.css'); //sets initial HTML page
