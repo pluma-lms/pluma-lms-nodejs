@@ -2,6 +2,8 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var main = require('./main.js');
+var chat = require('./chat.js');
+
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
@@ -29,13 +31,9 @@ io.on('connection', function (socket) {
             main.main(io, socket);
         }
     });
-    
-     socket.on('chat', function (username) {
-        if (username === 'user')
-        {
-            console.log("LOGIN");
-            main.main(io, socket);
-        }
+
+    socket.on('chat', function () {
+        chat.main(io, socket);
     });
 });
 
