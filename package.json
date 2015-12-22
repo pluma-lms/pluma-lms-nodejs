@@ -4,6 +4,8 @@
   "description": "Pluma LMS (Node.js)",
   "dependencies": {
     "express": "^4.10.2",
+    "mongodb": "^2.0.52",
+    "monk": "^1.0.1",
     "socket.io": "^1.3.7"
   }
 }

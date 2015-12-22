@@ -4,6 +4,10 @@ var io = require('socket.io')(http);
 var main = require('./main.js');
 var chat = require('./chat.js');
 
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/students');
+
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html'); //sets initial HTML page
 });
