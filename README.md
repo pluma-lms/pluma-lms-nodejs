@@ -26,9 +26,9 @@ Anybody is welcome to contribute to Pluma LMS's code. Please fork our repository
 
 # To-do list
 - [x] Move away from iframes, move towards dynamic getting HTML like Node.js flavor is doing
-- [ ] MongoDB support
-- [ ] Encyrption
-- [Q] Vitals
+- [X] MongoDB support
+- [ ] Encryption
+- [ ] Vitals
 - [ ] Notifications
 - [ ] Grades
 - [ ] Calendar
