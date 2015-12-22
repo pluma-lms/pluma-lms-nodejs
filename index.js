@@ -4,7 +4,7 @@ var io = require('socket.io')(http);
 var main = require('./main.js');
 var chat = require('./chat.js');
 
-ufnction findUser(db, username, callback) {
+function findUser(db, username, callback) {
     db.collection('students').findOne({"username": username}, function (err, user) {
         if (err !== null) {
             console.log(err);
