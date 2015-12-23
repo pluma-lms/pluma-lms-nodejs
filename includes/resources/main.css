@@ -44,6 +44,20 @@ body {
     float: right;
     width: 49%;
 }
+
+#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FF0000;
+    width: 100%;
+}
+
+#bannerText {
+    color: white;
+    text-align: center;
+}
+
 h1 {
     font-style: italic;
 }
