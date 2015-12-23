@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var main = require('./main.js');
 var chat = require('./chat.js');
+var register = require('./register.js');
 
 function findUser(db, username, callback) {
     db.collection('students').findOne({"username": username}, function (err, user) {
@@ -40,8 +41,6 @@ io.on('connection', function (socket) {
                 {
                     if (userInfo[1] === user.password)
                     {
-                        console.log("LOGIN");
-                        //process.exit(0);
                         main.main(io, socket);
                     }
                 }
@@ -52,6 +51,9 @@ io.on('connection', function (socket) {
     });
     socket.on('chat', function () {
         chat.main(io, socket);
+    });
+    socket.on('register', function () {
+        register.main(io, socket);
     });
 });
 http.listen(9000, function () {
