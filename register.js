@@ -7,8 +7,8 @@ function main(io, socket) {
         }
         socket.emit('page', data);
     });
-    socket.on('register', function () {
-        console.log(nick + ' disconnected.');
+    socket.on('register', function (userInfo) {
+        
     });
 }
 module.exports.main = main;
