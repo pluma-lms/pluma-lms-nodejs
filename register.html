@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pluma</title>
+        <link rel="stylesheet" type="text/css" href="./main.css">
+        <style>
+            body {
+                animation-name: background;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center"><img src="includes/assets/plumalms-logo.png" width="100px" alt="Pluma LMS" /></div>
+        <p>Username <input style="float: right;" id="user"/></p>
+        <p>Password <input style="float: right;" id="pass"  type="password"/></p>
+        <p>Confirm Password <input style="float: right;" id="conPass"  type="password"/></p>
+        <p>Name <input style="float: right;" id="name"/></p>
+        <p>Gender <input style="float: right;" id="gender"/></p>
+        <p>Date of Birth <input style="float: right;" id="dob"/></p>
+        <p>Student ID <input style="float: right;" id="id"/></p>
+        <button style="width: 100%;" class="butt" onclick="register()">Submit</button>
+        <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+        <script>
+            var socket = io();
+            function register()
+            {
+                var user = document.getElementById("user")
+                var pass = document.getElementById("pass");
+                var logInInfo = [document.getElementById("user").value, document.getElementById("pass").value, 
+                    document.getElementById("conPass").value, document.getElementById("name").value, document.getElementById("gender").value, 
+                    document.getElementById("id").value
+                ];
+                socket.emit('register', logInInfo);
+            }
+            function chat()
+            {
+                socket.emit('chat');
+            }
+            socket.on('page', function (html)
+            {
+                document.write(html);
+            });
+        </script>
+    </body>
+</html>
