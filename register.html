@@ -28,11 +28,17 @@
             var socket = io();
             function register()
             {
-                var logInInfo = [document.getElementById("user").value, document.getElementById("pass").value, 
-                    document.getElementById("conPass").value, document.getElementById("name").value, document.getElementById("gender").value, 
-                    document.getElementById("id").value
-                ];
-                socket.emit('register', logInInfo);
+                var pass = document.getElementById("pass").value;
+                var conPass = document.getElementById("conPass").value;
+                if (pass === conPass) {
+                    var logInInfo = [document.getElementById("user").value, pass,
+                        document.getElementById("name").value, document.getElementById("gender").value,
+                        document.getElementById("dob").value, document.getElementById("id").value
+                    ];
+                    socket.emit('register', logInInfo);
+                } else {
+                    alert("Passwords do not match");
+                }
             }
         </script>
     </body>
